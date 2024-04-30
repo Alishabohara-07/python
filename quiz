@@ -1,0 +1,51 @@
+quiz = {
+    1: {
+        "question": "What is the output of print(type(5))?",
+        "options": ["<class 'float'>", "<class 'int'>", "<class 'str'>", "<class 'list'>"],
+        "answer": "<class 'int'>"
+    },
+    2: {
+        "question": "Which of the following is not a Python data type?",
+        "options": ["float", "int", "str", "bool"],
+        "answer": "float32"
+    },
+    3: {
+        "question": "What is the output of print(5 + 3 * 2)?",
+        "options": ["10", "11", "13", "15"],
+        "answer": "11"
+    },
+    4: {
+        "question": "Which of the following is a Python keyword?",
+        "options": ["True", "False", "None", "Null"],
+        "answer": "True"
+    },
+    5: {
+        "question": "What is the output of print(range(5))?",
+        "options": ["[0, 1, 2, 3, 4]", "(0, 1, 2, 3, 4)", "range(0, 5)", "range(5)"],
+        "answer": "range(0, 5)"
+    }
+}
+
+
+score = 0
+attempts = 3
+
+
+for question in quiz:
+    print(quiz[question]["question"])
+    for i, option in enumerate(quiz[question]["options"], start=1):
+        print(f"{i}. {option}")
+    answer = input("Enter your answer (1-4): ")
+    if quiz[question]["answer"] == quiz[question]["options"][int(answer) - 1]:
+        print("Correct!")
+        score += 1
+    else:
+        print("Incorrect.")
+        attempts -= 1
+        if attempts == 0:
+            print("You have run out of attempts. Moving on to the next question...")
+            attempts = 3
+
+
+print(f"Your final score is {score}/{len(quiz)}"
+input("Press Enter to exit...")
