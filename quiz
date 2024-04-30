@@ -1,3 +1,4 @@
+# dictionary of questions and options
 quiz = {
     1: {
         "question": "What is the output of print(type(5))?",
@@ -6,7 +7,7 @@ quiz = {
     },
     2: {
         "question": "Which of the following is not a Python data type?",
-        "options": ["float", "int", "str", "bool"],
+        "options": ["float32", "int", "str", "bool"],
         "answer": "float32"
     },
     3: {
@@ -47,5 +48,5 @@ for question in quiz:
             attempts = 3
 
 
-print(f"Your final score is {score}/{len(quiz)}"
-input("Press Enter to exit...")
+print(f"Your final score is {score}/{len(quiz)}")
+
